@@ -11,7 +11,10 @@ public class DesvioPadrao {
 	
 	public double getDesvio() {
 		calculaDesvio();
+
 		return desvioPadrao;
+		
+		sdfsdfsfsdfsd
 	}
 	
 }
