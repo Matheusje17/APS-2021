@@ -9,9 +9,9 @@ public class MainTest {
 		Variancia var = new Variancia();
 		DesvioPadrao desvio = new DesvioPadrao();
 		
-		System.out.printf("A Variancia é %.2f",var.getVarianca());
+		System.out.printf("Variância: %.2f",var.getVarianca());
 		System.out.println("");
-		System.out.printf("O desvio é %.2f",desvio.getDesvio());
+		System.out.printf("Desvio padrão: %.2f",desvio.getDesvio());
 
 	}
 
