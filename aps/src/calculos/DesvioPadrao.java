@@ -14,7 +14,6 @@ public class DesvioPadrao {
 
 		return desvioPadrao;
 		
-		sdfsdfsfsdfsd
 	}
 	
 }
