@@ -58,7 +58,7 @@ public class Moda {
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
 			if (maiorFrequencia == quantidade) {
-				System.out.println(numeroChave + " ");
+				System.out.print(numeroChave + " ,");
 			}
 		}
 	}
