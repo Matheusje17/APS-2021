@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Moda {
+	private float moda;
 
-	public void main(String[] args) {
+	public Moda() {
 		
 		List<Float> numeros = new ArrayList<>();
 		
@@ -29,7 +30,7 @@ public class Moda {
 
 	}
 	
-	public static void calcularModa (List<Float>numeros) {
+	public void calcularModa (List<Float>numeros) {
 		Map<Float, Integer> frequenciaNumeros = new HashMap<>();
 		
 		int maiorFrequencia = 0;
@@ -51,6 +52,9 @@ public class Moda {
 		}
 		
 		System.out.println("A moda é : ");
+		
+
+		
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
 			if (maiorFrequencia == quantidade) {
@@ -58,5 +62,10 @@ public class Moda {
 			}
 		}
 	}
+	
+
+	
+	
+	
 
 }

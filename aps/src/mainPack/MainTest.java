@@ -2,6 +2,7 @@ package mainPack;
 
 import calculos.DesvioPadrao;
 import calculos.Mediana;
+import calculos.Moda;
 import calculos.Variancia;
 
 public class MainTest {
@@ -21,8 +22,9 @@ public class MainTest {
 		System.out.println("");
 		System.out.println("Mediana é: " + meio.getResultado());
 		
-	
-
+		
+		Moda moda = new Moda();
+		
 	}
 
 }
