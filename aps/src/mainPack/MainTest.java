@@ -11,7 +11,7 @@ public class MainTest {
 		
 		System.out.printf("Variância: %.2f",var.getVarianca());
 		System.out.println("");
-		System.out.printf("Desvio padrão: %.2f",desvio.getDesvio());
+		System.out.printf("Desvio padrão é: %.2f",desvio.getDesvio());
 
 	}
 
