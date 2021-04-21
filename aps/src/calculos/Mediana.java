@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Mediana {
 
-	public static void main(String[] args) {
+	private float resultado;
+	
+	public Mediana() {
 		
 		List<Float> numeros = new ArrayList<>();
 		
@@ -26,8 +28,11 @@ public class Mediana {
 			
 
 	}
+	public float getResultado() {
+		return resultado;
+	}
 	
-	public static void calcularMediana(List<Float>numeros) {
+	public void calcularMediana(List<Float>numeros) {
 		
 		float resultado = 0.0f;
 		
@@ -44,7 +49,9 @@ public class Mediana {
 			
 		}
 		
-		System.out.println("A mediana é : " + resultado);
+		
+		this.resultado = resultado;
+		//System.out.println("A mediana é : " + resultado); 
 	}
 
 }

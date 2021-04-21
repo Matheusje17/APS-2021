@@ -15,10 +15,9 @@ public class MainTest {
 		System.out.println("");
 		System.out.printf("Desvio padrão é: %.2f",desvio.getDesvio());
 		System.out.println("");
-		System.out.println("Mediana é: " + meio.);
+		System.out.println("Mediana é: " + meio.getResultado());
 		
-		
-
+	
 
 	}
 
