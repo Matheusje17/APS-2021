@@ -11,6 +11,8 @@ public class MainTest {
 		DesvioPadrao desvio = new DesvioPadrao();
 		Mediana meio = new Mediana();
 		
+		System.out.println("Resultados Obtidos a partir do gráfico");
+		System.out.println("");
 		System.out.printf("Variância: %.2f",var.getVarianca());
 		System.out.println("");
 		System.out.println("");
