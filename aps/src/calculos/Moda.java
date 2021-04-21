@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Moda {
-	private float moda;
-
+	boolean condicao = true;
 	public Moda() {
 		
+
 		List<Float> numeros = new ArrayList<>();
 		
 		numeros.add(158.0f);
@@ -53,14 +53,19 @@ public class Moda {
 		
 		System.out.print("A moda é : " );
 		
-
+		
 		
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
 			if (maiorFrequencia == quantidade) {
-				System.out.print(numeroChave + " ");
+
+				System.out.print(numeroChave + " ");	
 			}
+	
 		}
+		
+		
+		
 	}
 	
 
