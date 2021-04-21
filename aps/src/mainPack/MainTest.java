@@ -21,7 +21,7 @@ public class MainTest {
 		System.out.println("");
 		System.out.println("");
 		System.out.println("Mediana é: " + meio.getResultado());
-		
+		System.out.println("");
 		
 		Moda moda = new Moda();
 		
