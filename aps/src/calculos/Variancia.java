@@ -14,7 +14,7 @@ public class Variancia {
 				+ (Math.pow(dados[3] - testeMedia,2))
 				+ (Math.pow(dados[4] - testeMedia,2)) 
 				+ (Math.pow(dados[5] - testeMedia,2))
-				+ (Math.pow(dados[6] - testeMedia,2)) 
+				+ (Math.pow(dados[6] - testeMedia,2))  
 				+ (Math.pow(dados[7] - testeMedia,2))
 				+ (Math.pow(dados[8] - testeMedia,2));
 		
