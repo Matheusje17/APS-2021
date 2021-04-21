@@ -51,14 +51,14 @@ public class Moda {
 			}
 		}
 		
-		System.out.println("A moda é : ");
+		System.out.print("A moda é : " );
 		
 
 		
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
 			if (maiorFrequencia == quantidade) {
-				System.out.print(numeroChave + " ,");
+				System.out.print(numeroChave + " ");
 			}
 		}
 	}
