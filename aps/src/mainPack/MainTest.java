@@ -1,6 +1,7 @@
 package mainPack;
 
 import calculos.DesvioPadrao;
+import calculos.Media;
 import calculos.Mediana;
 import calculos.Moda;
 import calculos.Variancia;
@@ -11,6 +12,9 @@ public class MainTest {
 		Variancia var = new Variancia();
 		DesvioPadrao desvio = new DesvioPadrao();
 		Mediana meio = new Mediana();
+		Moda moda = new Moda();
+		Media media = new Media();
+		
 		
 		System.out.println("Resultados Obtidos a partir do gráfico");
 		System.out.println("");
@@ -22,8 +26,9 @@ public class MainTest {
 		System.out.println("");
 		System.out.println("Mediana é: " + meio.getResultado());
 		System.out.println("");
-		
-		Moda moda = new Moda();
+		System.out.println("Media é: " + media.getMedia());
+		System.out.println("");
+		moda.getModa();
 		
 	}
 

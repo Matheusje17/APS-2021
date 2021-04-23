@@ -7,10 +7,11 @@ import java.util.Map;
 
 public class Moda {
 	boolean condicao = true;
+	List<Float> numeros = new ArrayList<>();
 	public Moda() {
 		
 
-		List<Float> numeros = new ArrayList<>();
+		//List<Float> numeros = new ArrayList<>();
 		
 		numeros.add(158.0f);
 		numeros.add(143.0f);
@@ -25,8 +26,8 @@ public class Moda {
 		
 		//calcular a mediana = 24.0
 				
-			calcularModa(numeros);
-			System.out.println();
+			
+			//System.out.println();
 
 	}
 	
@@ -53,7 +54,7 @@ public class Moda {
 		
 		System.out.print("A moda é : " );
 		
-		
+
 		
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
@@ -69,7 +70,9 @@ public class Moda {
 	}
 	
 
-	
+	public void getModa() {
+		calcularModa(numeros);
+	}
 	
 	
 
