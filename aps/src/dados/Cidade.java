@@ -1,25 +1,37 @@
 package dados;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Cidade {
-	private String nomeCidade;
-	private String uF;
+	private StringProperty nomeCidade;
+	private StringProperty uF;
 	
 	
 	public Cidade(String nomeCidade) {
-		this.nomeCidade = nomeCidade;
+		this.nomeCidade = new SimpleStringProperty(nomeCidade);
 	}
 	
 	public String getNomeCidade() {
-		return nomeCidade;
+		return nomeCidade.get();
 	}
 	public void setNomeCidade(String nomeCidade) {
-		this.nomeCidade = nomeCidade;
+		this.nomeCidade.set(nomeCidade);
 	}
+	
+	public StringProperty nomeCidadeProperty() {
+		return nomeCidade;
+	}
+	
 	public String getuF() {
-		return uF;
+		return uF.get();
 	}
 	public void setuF(String uF) {
-		this.uF = uF;
+		this.uF.set(uF);
+	}
+	
+	public StringProperty uFProperty() {
+		return uF;
 	}
 	
 	

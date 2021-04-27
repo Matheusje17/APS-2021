@@ -3,6 +3,7 @@ package design;
 import dados.CasosApontados;
 import dados.Cidade;
 import dados.PreencheDados;
+import javafx.beans.binding.StringBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -14,7 +15,7 @@ public class Aps2021Controller {
 	private TableView<CasosApontados> dadosTable;
 	
 	@FXML
-	private TableColumn<CasosApontados, Cidade> nomeCidadeColumn;
+	private TableColumn<CasosApontados,String> nomeCidadeColumn;
 	
 	@FXML
 	private TableColumn<CasosApontados, Integer> qtdCasosColumn;
@@ -40,7 +41,7 @@ public class Aps2021Controller {
 	
 	@FXML
 	private void initialize() {
-		nomeCidadeColumn.setCellValueFactory(cellData-> cellData.getValue().cidadeProperty());
+		nomeCidadeColumn.setCellValueFactory(cellData-> cellData.getValue().cidadeProperty().get().nomeCidadeProperty());
 		qtdCasosColumn.setCellValueFactory(cellData -> cellData.getValue().qtdCasosProperty().asObject());
 		
 	}
