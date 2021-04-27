@@ -1,5 +1,10 @@
 package design;
 
+import calculos.DesvioPadrao;
+import calculos.Media;
+import calculos.Mediana;
+import calculos.Moda;
+import calculos.Variancia;
 import dados.CasosApontados;
 import dados.PreencheDados;
 import javafx.fxml.FXML;
@@ -17,6 +22,7 @@ public class Aps2021Controller {
 	
 	@FXML
 	private TableColumn<CasosApontados, Integer> qtdCasosColumn;
+
 	
 	@FXML
 	private Label media;
@@ -28,13 +34,21 @@ public class Aps2021Controller {
 	private Label desvioPadrao;
 	@FXML
 	private Label variancia;
-
+	
+	Media calcMedia = new Media();
+	Mediana calcMediana = new Mediana();
+	Moda calcModa = new Moda();
+	DesvioPadrao calcDesvio = new DesvioPadrao();
+	Variancia calcVariancia = new Variancia();
 	
 	@SuppressWarnings("unused")
 	private PreencheDados mainTela;
 	
 	public Aps2021Controller() {
-		
+
+		//media.setText("oi");
+		//mediana.setText(Double.toString(calcMediana.getResultado()));
+		//moda.setText(Float.toString(calcModa.getModa()));
 	}
 	
 	@FXML

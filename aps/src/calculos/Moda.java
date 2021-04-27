@@ -31,7 +31,7 @@ public class Moda {
 
 	}
 	
-	public void calcularModa (List<Float>numeros) {
+	public float calcularModa (List<Float>numeros) {
 		Map<Float, Integer> frequenciaNumeros = new HashMap<>();
 		
 		int maiorFrequencia = 0;
@@ -61,17 +61,19 @@ public class Moda {
 			if (maiorFrequencia == quantidade) {
 
 				System.out.print(numeroChave + " ");	
+				return numeroChave;
 			}
 	
 		}
 		
-		
+		return 0;
 		
 	}
 	
 
-	public void getModa() {
+	public float getModa() {
 		calcularModa(numeros);
+		return this.getModa();
 	}
 	
 	
