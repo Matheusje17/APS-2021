@@ -4,25 +4,26 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class PreencheDados {
-	private ObservableList<Cidade> cidadeData = FXCollections.observableArrayList();
+	private ObservableList<CasosApontados> casosApontados = FXCollections.observableArrayList();
 
 	public PreencheDados() {
 		
-		cidadeData.add(new Cidade("Guarujá",158));
-		cidadeData.add(new Cidade("Cubatão",143));
-		cidadeData.add(new Cidade("São Vicente",66));
-		cidadeData.add(new Cidade("Praia Grande",38));
-		cidadeData.add(new Cidade("Peruíbe",24));
-		cidadeData.add(new Cidade("Bertioga",15));
-		cidadeData.add(new Cidade("Santos",11));
-		cidadeData.add(new Cidade("Mongaguá",8));
-		cidadeData.add(new Cidade("Itanhaém",5));
+		casosApontados.add(new CasosApontados(new Cidade("Guarujá"),158));
+		casosApontados.add(new CasosApontados(new Cidade("Cubatão"),143));
+		casosApontados.add(new CasosApontados(new Cidade("São Vicente"),66));
+		casosApontados.add(new CasosApontados(new Cidade("Praia Grande"),38));
+		casosApontados.add(new CasosApontados(new Cidade("Peruíbe"),24));
+		casosApontados.add(new CasosApontados(new Cidade("Bertioga"),15));
+		casosApontados.add(new CasosApontados(new Cidade("Santos"),11));
+		casosApontados.add(new CasosApontados(new Cidade("Mongaguá"),8));
+		casosApontados.add(new CasosApontados(new Cidade("Itanhaém"),5));
+
 		
 
 	}
 	
-	public ObservableList<Cidade> getCidadeData(){
-		return cidadeData;
+	public ObservableList<CasosApontados> getcasosApontados(){
+		return casosApontados;
 	}
 	
 	
