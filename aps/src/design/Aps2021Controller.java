@@ -29,10 +29,7 @@ public class Aps2021Controller {
 	private Label desvioPadrao;
 	@FXML
 	private Label variancia;
-	
 
-
-	
 	
 	@SuppressWarnings("unused")
 	private PreencheDados mainTela;
