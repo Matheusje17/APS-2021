@@ -3,7 +3,6 @@ package design;
 import dados.CasosApontados;
 import dados.Cidade;
 import dados.PreencheDados;
-import javafx.beans.binding.StringBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
