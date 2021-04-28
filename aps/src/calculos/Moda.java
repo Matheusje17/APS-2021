@@ -75,6 +75,7 @@ public class Moda {
 	public float getModa() {
 		calcularModa(numeros);
 		return this.getModa();
+		
 	}
 	
 	
