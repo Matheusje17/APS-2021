@@ -1,18 +1,23 @@
 package calculos;
 
+import java.text.DecimalFormat;
+
+
+
 public class DesvioPadrao {
 	
 	private double desvioPadrao;
 	
 	public void calculaDesvio() {
 		Variancia var = new Variancia();
-		desvioPadrao = Math.sqrt(var.getVarianca());
+		desvioPadrao = Math.sqrt(var.getVarianciaDouble());
+
 	}
 	
-	public double getDesvio() {
+	public String getDesvio() {
 		calculaDesvio();
-
-		return desvioPadrao;
+		DecimalFormat df = new DecimalFormat("##.00");
+		return df.format(desvioPadrao);
 		
 		
 	}

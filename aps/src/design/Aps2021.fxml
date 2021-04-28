@@ -46,7 +46,7 @@
                         <Label text="Moda:" GridPane.rowIndex="2" />
                         <Label text="Desvio Padrão:" GridPane.rowIndex="3" />
                         <Label text="Variância" GridPane.rowIndex="4" />
-                        <Label fx:id="media" text="158" GridPane.columnIndex="1" />
+                        <Label fx:id="media" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="mediana" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="moda" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="desvioPadrao" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />

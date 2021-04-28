@@ -45,11 +45,18 @@ public class Aps2021Controller {
 	private PreencheDados mainTela;
 	
 	public Aps2021Controller() {
-
-		//media.setText("oi");
-		//mediana.setText(Double.toString(calcMediana.getResultado()));
-		//moda.setText(Float.toString(calcModa.getModa()));
+		
 	}
+	
+	
+	public void mostraCalculo() {
+		media.setText(Double.toString(calcMedia.getMedia()));
+		mediana.setText(Double.toString(calcMediana.getResultado()));
+		//moda.setText(Float.toString(calcModa.getModa()));
+		desvioPadrao.setText(calcDesvio.getDesvio());
+		variancia.setText(calcVariancia.getVarianca());
+	}
+	
 	
 	@FXML
 	private void initialize() {

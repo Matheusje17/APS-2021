@@ -1,4 +1,7 @@
 package calculos;
+
+import java.text.DecimalFormat;
+
 public class Variancia {
 	
 	Media media = new Media();
@@ -15,9 +18,15 @@ public class Variancia {
 		variancia /=m;
 	}
 	
-	public double getVarianca() {
+	public String getVarianca() {
 		calculaVarianca();
-		
+		DecimalFormat df = new DecimalFormat("###.000");
+		return df.format(variancia);
+	}
+	
+	public Double getVarianciaDouble() {
+		calculaVarianca();
+
 		return variancia;
 	}
 	

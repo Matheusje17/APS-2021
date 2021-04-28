@@ -52,7 +52,7 @@ public class MainTela extends Application {
             rootLayout.setCenter(personOverview);
             Aps2021Controller controller = loader.getController();
             controller.setPreencheDados(new PreencheDados());
-            
+            controller.mostraCalculo();
             
         } catch (IOException e) {
             e.printStackTrace();
