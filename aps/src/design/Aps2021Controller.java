@@ -64,7 +64,7 @@ public class Aps2021Controller {
 	@SuppressWarnings("unused")
 	private PreencheDados mainTela;
 	//private Cidade nomeCidade;
-	private CasosApontados grafico;
+	//private CasosApontados grafico;
 	
 
 	public Aps2021Controller() {
@@ -102,7 +102,7 @@ public class Aps2021Controller {
 	}
 	
 	public void setBarra(CasosApontados casos) {
-		this.grafico = casos;
+		//this.grafico = casos;
 		
 		for(int i = 0; i < 9;i++) {
 			XYChart.Series<String, Integer> series = new XYChart.Series<>();
