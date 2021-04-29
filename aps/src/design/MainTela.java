@@ -2,6 +2,7 @@ package design;
 
 import java.io.IOException;
 
+import dados.CasosApontados;
 import dados.PreencheDados;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -53,6 +54,7 @@ public class MainTela extends Application {
             Aps2021Controller controller = loader.getController();
             controller.setPreencheDados(new PreencheDados());
             controller.mostraCalculo();
+            controller.setBarra(new CasosApontados());
             
         } catch (IOException e) {
             e.printStackTrace();

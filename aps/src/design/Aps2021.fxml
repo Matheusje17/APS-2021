@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="design.Aps2021Controller">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" layoutX="214.0" layoutY="110.0" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.2507163323782235" layoutX="214.0" layoutY="110.0" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
@@ -27,7 +27,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Label layoutX="14.0" layoutY="231.0" text="Cálculos:" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="231.0" />
+                  <Label layoutX="14.0" layoutY="231.0" prefHeight="17.0" prefWidth="49.0" text="Cálculos:" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="231.0" />
                   <GridPane layoutX="14.0" layoutY="258.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-24.0" AnchorPane.topAnchor="258.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
@@ -57,12 +57,12 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <BarChart prefHeight="448.0" prefWidth="452.0" title="Número de Casos de Dengue (Baixada Santista)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BarChart fx:id="barChart" barGap="0.0" categoryGap="0.0" horizontalGridLinesVisible="false" prefHeight="448.0" prefWidth="487.0" title="Número de Casos de Dengue (Baixada Santista)" verticalGridLinesVisible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis fx:id="eixoX" label="Cidades" prefWidth="444.0" tickLabelGap="0.0" tickLabelRotation="30.0" tickLength="0.0" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis label="Número de Casos" side="LEFT" tickLength="5.0" />
                     </yAxis>
                   </BarChart>
                </children>

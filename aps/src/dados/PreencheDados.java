@@ -23,9 +23,10 @@ public class PreencheDados {
 	}
 	
 	public ObservableList<CasosApontados> getCasosApontados(){
+		
 		return casosApontados;
 	}
-	
+
 	
 
 }
