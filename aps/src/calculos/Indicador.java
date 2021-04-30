@@ -26,7 +26,7 @@ public class Indicador {
 		
 		Moda moda = new Moda(this.casos);
 		if(moda.getModa()) {
-			return "Não há";
+			return "Amodal";
 		}else {
 			
 			return Double.toString(moda.calcularModa());
