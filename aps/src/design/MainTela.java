@@ -2,7 +2,7 @@ package design;
 
 import java.io.IOException;
 
-import dados.CasosApontados;
+
 import dados.PreencheDados;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -52,9 +52,10 @@ public class MainTela extends Application {
             // Define o person overview dentro do root layout.
             rootLayout.setCenter(personOverview);
             Aps2021Controller controller = loader.getController();
-            controller.setPreencheDados(new PreencheDados());
+            PreencheDados pd=new PreencheDados();
+            controller.setPreencheDados(pd);
             controller.mostraCalculo();
-            controller.setBarra(new CasosApontados());
+            controller.setBarra(pd);
             
         } catch (IOException e) {
             e.printStackTrace();

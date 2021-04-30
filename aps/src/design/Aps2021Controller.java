@@ -1,21 +1,12 @@
 package design;
 
-import java.util.Arrays;
-
-import calculos.DesvioPadrao;
-import calculos.Media;
-import calculos.Mediana;
-import calculos.Moda;
-import calculos.Variancia;
+import calculos.Indicador;
 import dados.CasosApontados;
 import dados.PreencheDados;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
@@ -49,20 +40,9 @@ public class Aps2021Controller {
 	@FXML
 	private CategoryAxis eixoX;
 	
-	@FXML
-	private ObservableList<String> cidade = FXCollections.observableArrayList();
-	
-	@FXML
-	private ObservableList<Integer> qtdCasos = FXCollections.observableArrayList();
-
-	Media calcMedia = new Media();
-	Mediana calcMediana = new Mediana();
-	Moda calcModa = new Moda();
-	DesvioPadrao calcDesvio = new DesvioPadrao();
-	Variancia calcVariancia = new Variancia();
 	
 	@SuppressWarnings("unused")
-	private PreencheDados mainTela;
+	private PreencheDados preencheDados;
 	//private Cidade nomeCidade;
 	//private CasosApontados grafico;
 	
@@ -73,11 +53,13 @@ public class Aps2021Controller {
 	
 	
 	public void mostraCalculo() {
-		media.setText(Double.toString(calcMedia.getMedia()));
-		mediana.setText(Double.toString(calcMediana.getResultado()));
-		//moda.setText(Float.toString(calcModa.getModa()));
-		desvioPadrao.setText(calcDesvio.getDesvio());
-		variancia.setText(calcVariancia.getVarianca());
+		Indicador ind= new Indicador(this.preencheDados.getCasosApontados()); 
+		
+		media.setText(ind.getMedia());
+		mediana.setText(ind.getCalcMediana());
+		moda.setText(ind.getCalcModa());
+		desvioPadrao.setText(ind.getCalcDesvio());
+		variancia.setText(ind.getCalcVariancia());
 	}
 	
 	
@@ -86,29 +68,22 @@ public class Aps2021Controller {
 		nomeCidadeColumn.setCellValueFactory(cellData-> cellData.getValue().cidadeProperty().get().nomeCidadeProperty());
 		qtdCasosColumn.setCellValueFactory(cellData -> cellData.getValue().qtdCasosProperty().asObject());
 		
-		
-		String[] arrayCidades = {"Guarujá","Cubatão","S.Vicente","P.Grande","Peruíbe","Bertioga","Santos","Mongaguá","Itanhém"};
-		cidade.addAll(Arrays.asList(arrayCidades));
-		eixoX.setCategories(cidade);
-		
-		Integer[] arrayCasos = {158,143,66,38,24,15,11,8,5};
-		qtdCasos.addAll(Arrays.asList(arrayCasos));		
+			
 	}
 	
 	public void setPreencheDados(PreencheDados preencheDados) {
-		this.mainTela = preencheDados;
+		this.preencheDados = preencheDados;
 		dadosTable.setItems(preencheDados.getCasosApontados());
 		
 	}
 	
-	public void setBarra(CasosApontados casos) {
-		//this.grafico = casos;
-		
-		for(int i = 0; i < 9;i++) {
-			XYChart.Series<String, Integer> series = new XYChart.Series<>();
-			series.getData().add(new XYChart.Data<>(cidade.get(i),qtdCasos.get(i)));
-			barChart.getData().add(series);
-			
+	public void setBarra(PreencheDados item) {
+		if (item!=null) {
+			for(CasosApontados caso: item.getCasosApontados()) {
+				XYChart.Series<String, Integer> series = new XYChart.Series<>();
+				series.getData().add(new XYChart.Data<>(caso.getCidade().getNomeCidade(),caso.getQtdeCasos()));
+				barChart.getData().add(series);
+			}
 		}
 
 	}

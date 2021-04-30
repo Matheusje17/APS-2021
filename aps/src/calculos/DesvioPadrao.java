@@ -7,11 +7,14 @@ import java.text.DecimalFormat;
 public class DesvioPadrao {
 	
 	private double desvioPadrao;
+	private Variancia varianca; 
 	
+	public DesvioPadrao(Variancia varianca) {
+		this.varianca=varianca;
+		
+	}
 	public void calculaDesvio() {
-		Variancia var = new Variancia();
-		desvioPadrao = Math.sqrt(var.getVarianciaDouble());
-
+		desvioPadrao = Math.sqrt(this.varianca.getVarianciaDouble());
 	}
 	
 	public String getDesvio() {

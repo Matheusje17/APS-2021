@@ -1,15 +1,23 @@
 package calculos;
 
+import java.util.List;
+
+import dados.CasosApontados;
+
 public class Media {
 	
-	private double[] dados = {158,143,66,38,24,15,11,8,5};
+	private List<CasosApontados> dados; 
 	private double media,soma;
 	
+	public Media(List<CasosApontados> dados) {
+		this.dados=dados;
+	}
+
 	public double getMedia() {
-		for(int i = 0; i < dados.length;i++) {
-			soma += dados[i];
+		for(CasosApontados v:dados) {
+			soma += v.getQtdeCasos();
 		}
-		media = soma / dados.length;
+		media = soma / dados.size();
 		return media;
 	}
 	

@@ -6,15 +6,41 @@ import java.util.List;
 import java.util.Map;
 
 public class Moda {
+	public static void main (String args []) {
+		MainExecuta m = new MainExecuta();
+		List<Float> numeros = new ArrayList<>();
+		numeros.add(158.0f);
+		numeros.add(148.0f);
+		numeros.add(66.0f);
+		numeros.add(38.0f);
+		numeros.add(24.0f);
+		numeros.add(15.0f);
+		numeros.add(11.0f);
+		numeros.add(8.0f);
+		numeros.add(5.0f);
+		
+		m.calcularModa(numeros);
+	}
+	
+}
+
+
+class MainExecuta {
+	
+
+	
+	
+	
+	
 	boolean condicao = true;
 	List<Float> numeros = new ArrayList<>();
-	public Moda() {
+	public MainExecuta() {
 		
 
 		//List<Float> numeros = new ArrayList<>();
 		
 		numeros.add(158.0f);
-		numeros.add(143.0f);
+		numeros.add(158.0f);
 		numeros.add(66.0f);
 		numeros.add(38.0f);
 		numeros.add(24.0f);
@@ -34,6 +60,7 @@ public class Moda {
 	public float calcularModa (List<Float>numeros) {
 		Map<Float, Integer> frequenciaNumeros = new HashMap<>();
 		
+
 		int maiorFrequencia = 0;
 		
 		for (Float numero : numeros) {
@@ -41,7 +68,6 @@ public class Moda {
 			
 			if (quantidade == null) {
 				quantidade = 1;
-				
 			} else {
 				quantidade += 1;
 			}
@@ -58,16 +84,12 @@ public class Moda {
 		
 		for (Float numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
-			if (maiorFrequencia == quantidade) {
-
-				System.out.print(numeroChave + " ");	
-				
+			if (maiorFrequencia == quantidade && maiorFrequencia>1) {
 				return numeroChave;
 			}
-	
 		}
 		
-		return 0;
+		return 0f;
 		
 	}
 	

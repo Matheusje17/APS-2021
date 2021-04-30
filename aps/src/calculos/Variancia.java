@@ -1,21 +1,29 @@
 package calculos;
 
 import java.text.DecimalFormat;
+import java.util.List;
+
+import dados.CasosApontados;
 
 public class Variancia {
 	
-	Media media = new Media();
-	private double[] dados = {158,143,66,38,24,15,11,8,5};
+	private double vlMedia ;
+	private List<CasosApontados> casos ;
 	private double variancia;
 	private double soma;
 	
+	public  Variancia(List<CasosApontados> casos,Double vlMedia) {
+		this.casos=casos;
+		this.vlMedia=vlMedia;
+	}
+	
 	public void calculaVarianca() {
-		double m = media.getMedia();
-		for(int i = 0; i < dados.length;i++) {
-			soma = Math.pow(dados[i] - m,2);
+
+		for(CasosApontados c:this.casos) {
+			soma = Math.pow(c.getQtdeCasos() - vlMedia,2);
 			variancia +=soma;
 		}
-		variancia /=m;
+		variancia /=vlMedia;
 	}
 	
 	public String getVarianca() {
