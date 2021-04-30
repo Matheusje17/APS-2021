@@ -9,7 +9,7 @@ import dados.CasosApontados;
 
 public class Moda {
 	
-	boolean condicao = true;
+	boolean condicao =false;
 	private List<CasosApontados>dados;
 	public Moda(List<CasosApontados>dados) {
 		this.dados = dados;
@@ -45,12 +45,12 @@ public class Moda {
 				
 			}else {
 				condicao=false;
+				
 			}
 			
+			
 		}
-		
 		return 0f;
-		
 	}
 	
 
