@@ -1,92 +1,52 @@
 package calculos;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dados.CasosApontados;
+
+
 public class Moda {
-	public static void main (String args []) {
-		MainExecuta m = new MainExecuta();
-		List<Float> numeros = new ArrayList<>();
-		numeros.add(158.0f);
-		numeros.add(148.0f);
-		numeros.add(66.0f);
-		numeros.add(38.0f);
-		numeros.add(24.0f);
-		numeros.add(15.0f);
-		numeros.add(11.0f);
-		numeros.add(8.0f);
-		numeros.add(5.0f);
-		
-		m.calcularModa(numeros);
-	}
-	
-}
-
-
-class MainExecuta {
-	
-
-	
-	
-	
 	
 	boolean condicao = true;
-	List<Float> numeros = new ArrayList<>();
-	public MainExecuta() {
-		
-
-		//List<Float> numeros = new ArrayList<>();
-		
-		numeros.add(158.0f);
-		numeros.add(158.0f);
-		numeros.add(66.0f);
-		numeros.add(38.0f);
-		numeros.add(24.0f);
-		numeros.add(15.0f);
-		numeros.add(11.0f);
-		numeros.add(8.0f);
-		numeros.add(5.0f);
-		
-		
-		//calcular a mediana = 24.0
-				
-			
-			//System.out.println();
-
+	private List<CasosApontados>dados;
+	public Moda(List<CasosApontados>dados) {
+		this.dados = dados;
 	}
-	
-	public float calcularModa (List<Float>numeros) {
-		Map<Float, Integer> frequenciaNumeros = new HashMap<>();
+	 
+	public float calcularModa () {
+		Map<Integer, Integer> frequenciaNumeros = new HashMap<>();
 		
 
 		int maiorFrequencia = 0;
 		
-		for (Float numero : numeros) {
-			Integer quantidade = frequenciaNumeros.get(numero);
+		for (CasosApontados casos : dados) {
+			@SuppressWarnings("unlikely-arg-type")
+			Integer quantidade = frequenciaNumeros.get(casos);
 			
 			if (quantidade == null) {
 				quantidade = 1;
 			} else {
 				quantidade += 1;
 			}
-			frequenciaNumeros.put(numero, quantidade);
+			frequenciaNumeros.put(casos.getQtdeCasos(), quantidade);
 			
 			if (maiorFrequencia < quantidade) {
 				maiorFrequencia = quantidade;
 			}
 		}
+	
 		
-		System.out.print("A moda é : " );
-		
-
-		
-		for (Float numeroChave : frequenciaNumeros.keySet()) {
+		for (int numeroChave : frequenciaNumeros.keySet()) {
 			int quantidade = frequenciaNumeros.get(numeroChave);
 			if (maiorFrequencia == quantidade && maiorFrequencia>1) {
 				return numeroChave;
+				
+			}else {
+				condicao=false;
 			}
+			
 		}
 		
 		return 0f;
@@ -94,9 +54,9 @@ class MainExecuta {
 	}
 	
 
-	public float getModa() {
-		calcularModa(numeros);
-		return this.getModa();
+	public boolean getModa() {
+		
+		return condicao;
 		
 	}
 	

@@ -1,57 +1,39 @@
 package calculos;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import dados.CasosApontados;
 
 public class Mediana {
 
-	private float resultado;
+	private double resultado;
+	private List <CasosApontados> dados;
 	
-	public Mediana() {
-		
-		List<Float> numeros = new ArrayList<>();
-		
-		numeros.add(158.0f);
-		numeros.add(143.0f);
-		numeros.add(66.0f);
-		numeros.add(38.0f);
-		numeros.add(24.0f);
-		numeros.add(15.0f);
-		numeros.add(11.0f);
-		numeros.add(8.0f);
-		numeros.add(5.0f);
-		
-		//calcular a mediana = 24.0
-				
-			calcularMediana(numeros);
-			System.out.println();
-			
+	
+	public Mediana(List <CasosApontados> dados) {	
+		this.dados = dados;
+	}
 
-	}
-	public float getResultado() {
-		return resultado;
-	}
 	
-	public void calcularMediana(List<Float>numeros) {
+	public double getMediana() {
 		
-		float resultado = 0.0f;
+		double resultado;
 		
-		if(numeros.size()% 2 != 0) {
+		if(dados.size()% 2 != 0) {
 			
-			int posicaoNumero = ((numeros.size() + 1) / 2) -1;
-			resultado = numeros.get(posicaoNumero);		
-			
+			int posicaoNumero = ((dados.size() + 1) / 2) -1;
+			resultado = dados.get(posicaoNumero).getQtdeCasos();		
 			
 		} else {
-			int posicaoNumero = Math.round(numeros.size() + 1) / 2 - 1;
-			resultado = ((numeros.get(posicaoNumero) + numeros.get(posicaoNumero + 1)) /2);
-			
-			
+			int posicaoNumero = Math.round(dados.size() + 1) / 2 - 1;
+			resultado = ((dados.get(posicaoNumero).getQtdeCasos() + dados.get(posicaoNumero + 1).getQtdeCasos()) /2);	
 		}
 		
-		
 		this.resultado = resultado;
-		//System.out.println("A mediana é : " + resultado); 
+		
+		return this.resultado;
 	}
+	
+	
 
 }

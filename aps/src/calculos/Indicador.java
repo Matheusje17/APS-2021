@@ -18,12 +18,22 @@ public class Indicador {
 
 
 	public String getCalcMediana() {
-
-		return null;
+		Mediana mediana = new Mediana(this.casos);
+		return Double.toString(mediana.getMediana());
 	}
 
 	public String getCalcModa() {
-		return null;
+		
+		Moda moda = new Moda(this.casos);
+		if(moda.getModa()) {
+			return "Não há";
+		}else {
+			
+			return Double.toString(moda.calcularModa());
+		}
+			
+		
+		
 	}
 
 	public String getCalcDesvio() {
