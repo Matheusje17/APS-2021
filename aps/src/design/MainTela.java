@@ -2,13 +2,13 @@ package design;
 
 import java.io.IOException;
 
-
 import dados.PreencheDados;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainTela extends Application {
@@ -44,12 +44,11 @@ public class MainTela extends Application {
 	
 	public void showPersonOverview() {
 		try {
-            // Carrega o person overview.
+            
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainTela.class.getResource("/design/Aps2021.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
-            
-            // Define o person overview dentro do root layout.
+    
             rootLayout.setCenter(personOverview);
             Aps2021Controller controller = loader.getController();
             PreencheDados pd=new PreencheDados();
@@ -62,7 +61,32 @@ public class MainTela extends Application {
         }
 	}
 	
+	public void showLineChart() {
+		try {
+      
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainTela.class.getResource("/design/GraficoLinha.fxml"));
+            AnchorPane page =(AnchorPane) loader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Curva de Gauss casos de Dengue");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            
+            PreencheDados pd=new PreencheDados();
+            GraficoLinhaController linhaController = new GraficoLinhaController(pd);
+            linhaController.setLine(pd);
+            dialogStage.show();
+            
+            
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
 	
+
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
