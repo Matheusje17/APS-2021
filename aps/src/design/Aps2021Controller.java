@@ -9,7 +9,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
 public class Aps2021Controller {
@@ -22,6 +21,8 @@ public class Aps2021Controller {
 	
 	@FXML
 	private TableColumn<CasosApontados, Integer> qtdCasosColumn;
+
+	
 
 	
 	@FXML
@@ -37,9 +38,6 @@ public class Aps2021Controller {
 	
 	@FXML
 	private BarChart<String,Integer> barChart;
-
-	@FXML
-	private LineChart<String, Integer> lineChart;
 	
 	@FXML
 	private CategoryAxis eixoX;
@@ -94,6 +92,7 @@ public class Aps2021Controller {
 		}
 
 	}
+	
 	
 
 	

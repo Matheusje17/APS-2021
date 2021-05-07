@@ -3,18 +3,22 @@ package design;
 import dados.CasosApontados;
 import dados.PreencheDados;
 import javafx.fxml.FXML;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
 public class GraficoLinhaController {
 	
-	private PreencheDados preencheDados;
-	GraficoLinhaController(PreencheDados preencheDados){
-		this.setPreencheDados(preencheDados);
-	}
 	
 	@FXML
 	private LineChart<String, Integer> lineChart;
+	
+	@FXML
+	private CategoryAxis x;
+	
+	@FXML
+	private NumberAxis y;
 	
 	
 	public void setLine(PreencheDados item) {
@@ -23,21 +27,10 @@ public class GraficoLinhaController {
 				XYChart.Series<String, Integer> series = new XYChart.Series<>();
 				series.getData().add(new XYChart.Data<>(caso.getCidade().getNomeCidade(),caso.getQtdeCasos()));
 				lineChart.getData().add(series);
+				
 			}
 		}
 
-	}
-
-
-	
-	
-	public PreencheDados getPreencheDados() {
-		return preencheDados;
-	}
-
-
-	public void setPreencheDados(PreencheDados preencheDados) {
-		this.preencheDados = preencheDados;
 	}
 	
 	

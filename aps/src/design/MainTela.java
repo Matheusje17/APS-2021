@@ -74,9 +74,10 @@ public class MainTela extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             
-            PreencheDados pd=new PreencheDados();
-            GraficoLinhaController linhaController = new GraficoLinhaController(pd);
-            linhaController.setLine(pd);
+            PreencheDados pdLine = new PreencheDados();
+            
+            GraficoLinhaController linhaController = loader.getController();
+            linhaController.setLine(pdLine);
             dialogStage.show();
             
             
