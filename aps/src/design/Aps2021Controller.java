@@ -21,9 +21,6 @@ public class Aps2021Controller {
 	
 	@FXML
 	private TableColumn<CasosApontados, Integer> qtdCasosColumn;
-
-	
-
 	
 	@FXML
 	private Label media;

@@ -22,11 +22,15 @@ public class GraficoLinhaController {
 	
 	
 	public void setLine(PreencheDados item) {
+		
+		
 		if (item!=null) {
 			for(CasosApontados caso: item.getCasosApontados()) {
+			
 				XYChart.Series<String, Integer> series = new XYChart.Series<>();
 				series.getData().add(new XYChart.Data<>(caso.getCidade().getNomeCidade(),caso.getQtdeCasos()));
 				lineChart.getData().add(series);
+
 				
 			}
 		}
