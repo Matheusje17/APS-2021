@@ -11,11 +11,20 @@ public class Cidade {
 	public Cidade(String nomeCidade) {
 		this.nomeCidade = new SimpleStringProperty(nomeCidade);
 	}
+	public Cidade() {
+
+	}
 	
 	public String getNomeCidade() {
 		return nomeCidade.get();
 	}
 	public void setNomeCidade(String nomeCidade) {
+		String teste;
+		teste = nomeCidade;
+		if(teste == null) {
+			this.nomeCidade.set("Mano ferrou");
+			
+		}
 		this.nomeCidade.set(nomeCidade);
 	}
 	

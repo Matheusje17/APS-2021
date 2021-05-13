@@ -5,10 +5,11 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
+
 public class CasosApontados {
 	
-	private final ObjectProperty<Cidade> cidade;
-	private final IntegerProperty qtdCasos;
+	private ObjectProperty<Cidade> cidade;
+	private IntegerProperty qtdCasos;
 
 	
 	public CasosApontados() {
@@ -19,6 +20,17 @@ public class CasosApontados {
 		this.cidade = new SimpleObjectProperty<Cidade>(cidade);
 		this.qtdCasos = new SimpleIntegerProperty(qtdeCasos);
 	}
+	public CasosApontados(int qtdeCasos) {
+		
+		this.qtdCasos = new SimpleIntegerProperty(qtdeCasos);
+	}
+	
+	public CasosApontados(Cidade cidade) {
+		this.cidade = new SimpleObjectProperty<Cidade>(cidade);
+
+	}
+	
+	
 	
 	public Cidade getCidade() {
 		return cidade.get();
@@ -41,6 +53,7 @@ public class CasosApontados {
 	public IntegerProperty qtdCasosProperty(){
 		return qtdCasos;
 	}
+	
 
 	
 	
