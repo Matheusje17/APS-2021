@@ -1,15 +1,9 @@
 package dados;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-
-
 public class CasosApontados {
 	
-	private ObjectProperty<Cidade> cidade;
-	private IntegerProperty qtdCasos;
+	private Cidade cidade;
+	private Integer qtdCasos;
 
 	
 	public CasosApontados() {
@@ -17,42 +11,39 @@ public class CasosApontados {
 	}
 	
 	public CasosApontados(Cidade cidade, int qtdeCasos) {
-		this.cidade = new SimpleObjectProperty<Cidade>(cidade);
-		this.qtdCasos = new SimpleIntegerProperty(qtdeCasos);
+		this.cidade = cidade;
+		this.qtdCasos=qtdeCasos;
 	}
 	public CasosApontados(int qtdeCasos) {
 		
-		this.qtdCasos = new SimpleIntegerProperty(qtdeCasos);
+		this.qtdCasos =qtdeCasos;
 	}
 	
 	public CasosApontados(Cidade cidade) {
-		this.cidade = new SimpleObjectProperty<Cidade>(cidade);
+		this.cidade =cidade;
 
 	}
 	
 	
 	
 	public Cidade getCidade() {
-		return cidade.get();
-	}
-	public void setCidade(Cidade cidade) {
-		this.cidade.set(cidade);
-	}
-	
-	public ObjectProperty<Cidade> cidadeProperty() {
 		return cidade;
 	}
+	public void setCidade(Cidade cidade) {
+		this.cidade=cidade;
+	}
 	
+		
 	public int getQtdeCasos() {
-		return qtdCasos.get();
+		return qtdCasos;
 	}
 	
 	public void setQtdeCasos(int qtdCasos) {
-		this.qtdCasos.set(qtdCasos);
+		this.qtdCasos=qtdCasos;
 	}
-	public IntegerProperty qtdCasosProperty(){
-		return qtdCasos;
-	}
+	
+
+
 	
 
 	

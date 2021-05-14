@@ -6,16 +6,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.apache.commons.collections4.IteratorUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class PreencheDados {
-	private ObservableList<CasosApontados> casosApontados = FXCollections.observableArrayList();
+	List<CasosApontados> casosApontados= new ArrayList<CasosApontados>();
 
 	public PreencheDados() throws IOException {
 		PegaDadosExcel();
@@ -52,16 +51,15 @@ public class PreencheDados {
 					Cidade cidade = new Cidade();
 					CasosApontados casos = new CasosApontados();
 
-					int i = 0;
 					while(cellIterator.hasNext()) {
 						
 						
 						
 						Cell cell = cellIterator.next();
-
+						
 						switch (cell.getCellType()) {
 						case STRING:
-							
+							cidade.setNomeCidade(cell.getStringCellValue());
 
 							break;
 						case NUMERIC:
@@ -70,12 +68,12 @@ public class PreencheDados {
 						default:
 							break;
 						}
-						//cidade.setNomeCidade(nomeCidade);
+						
 
 					}
 					
 
-					//casos.setCidade(new Cidade("Tesest"));
+
 					casos.setCidade(cidade);
 					casosApontados.add(casos);
 				}
@@ -102,7 +100,7 @@ public class PreencheDados {
 	}
 
 
-	public ObservableList<CasosApontados> getCasosApontados(){
+	public List<CasosApontados> getCasosApontados(){
 		
 		return casosApontados;
 	}

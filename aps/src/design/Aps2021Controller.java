@@ -3,13 +3,15 @@ package design;
 import calculos.Indicador;
 import dados.CasosApontados;
 import dados.PreencheDados;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class Aps2021Controller {
 	
@@ -20,7 +22,7 @@ public class Aps2021Controller {
 	private TableColumn<CasosApontados,String> nomeCidadeColumn;
 	
 	@FXML
-	private TableColumn<CasosApontados, Integer> qtdCasosColumn;
+	private TableColumn<CasosApontados,Integer> qtdCasosColumn;
 	
 	@FXML
 	private Label media;
@@ -67,15 +69,15 @@ public class Aps2021Controller {
 	
 	@FXML
 	private void initialize() {
-		nomeCidadeColumn.setCellValueFactory(cellData-> cellData.getValue().cidadeProperty().get().nomeCidadeProperty());
-		qtdCasosColumn.setCellValueFactory(cellData -> cellData.getValue().qtdCasosProperty().asObject());
-		
-			
+
+		nomeCidadeColumn.setCellValueFactory( c-> new ReadOnlyObjectWrapper<String>(c.getValue().getCidade().getNomeCidade()));
+		qtdCasosColumn.setCellValueFactory(c->new ReadOnlyObjectWrapper<Integer>(c.getValue().getQtdeCasos()));
 	}
 	
 	public void setPreencheDados(PreencheDados preencheDados) {
 		this.preencheDados = preencheDados;
-		dadosTable.setItems(preencheDados.getCasosApontados());
+		dadosTable.setItems( FXCollections.observableArrayList(preencheDados.getCasosApontados()));
+
 		
 	}
 	
