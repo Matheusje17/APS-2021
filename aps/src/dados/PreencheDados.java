@@ -18,24 +18,10 @@ public class PreencheDados {
 
 	public PreencheDados() throws IOException {
 		PegaDadosExcel();
-//		casosApontados.add(new CasosApontados(new Cidade("Guarujá"),158));
-//		casosApontados.add(new CasosApontados(new Cidade("Cubatão"),143));
-//		casosApontados.add(new CasosApontados(new Cidade("São Vicente"),66));
-//		casosApontados.add(new CasosApontados(new Cidade("Praia Grande"),38));
-//		casosApontados.add(new CasosApontados(new Cidade("Peruíbe"),24));
-//		casosApontados.add(new CasosApontados(new Cidade("Bertioga"),15));
-//		casosApontados.add(new CasosApontados(new Cidade("Santos"),11));
-//		casosApontados.add(new CasosApontados(new Cidade("Mongaguá"),8));
-//		casosApontados.add(new CasosApontados(new Cidade("Itanhaém"),5));
-
-		
-
 	}
-	
-	
+
 	public void PegaDadosExcel() throws IOException {
-		
-		
+			
 		try{
 			File file = new File("C:\\NewJavaWS\\Testes\\src\\testes\\DadosDengue.xlsx");
 			FileInputStream fImputStream = new FileInputStream(file);
@@ -53,8 +39,6 @@ public class PreencheDados {
 
 					while(cellIterator.hasNext()) {
 						
-						
-						
 						Cell cell = cellIterator.next();
 						
 						switch (cell.getCellType()) {
@@ -67,31 +51,19 @@ public class PreencheDados {
 							break;
 						default:
 							break;
-						}
-						
-
+						}						
 					}
 					
-
-
 					casos.setCidade(cidade);
 					casosApontados.add(casos);
 				}
-			}
-			
+			}			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
-	
-	
-	
-	
-	
 	
 	@SuppressWarnings("unused")
 	private List<?> toList(Iterator<?> iterator) {
@@ -99,12 +71,9 @@ public class PreencheDados {
 		return IteratorUtils.toList(iterator);
 	}
 
-
 	public List<CasosApontados> getCasosApontados(){
 		
 		return casosApontados;
 	}
-
-	
 
 }

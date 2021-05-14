@@ -55,7 +55,6 @@ public class Aps2021Controller {
 		
 	}
 	
-	
 	public void mostraCalculo() {
 		Indicador ind= new Indicador(this.preencheDados.getCasosApontados()); 
 		
@@ -65,7 +64,6 @@ public class Aps2021Controller {
 		desvioPadrao.setText(ind.getCalcDesvio());
 		variancia.setText(ind.getCalcVariancia());
 	}
-	
 	
 	@FXML
 	private void initialize() {
