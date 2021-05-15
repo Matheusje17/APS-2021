@@ -19,11 +19,10 @@ public class PreencheDados {
 	public PreencheDados() throws IOException {
 		PegaDadosExcel();
 	}
-
 	public void PegaDadosExcel() throws IOException {
 			
 		try{
-			File file = new File("C:\\NewJavaWS\\Testes\\src\\testes\\DadosDengue.xlsx");
+			File file = new File("C:\\Users\\Matheus\\git\\APS-2021\\aps\\src\\dados\\DadosDengue.xlsx");
 			FileInputStream fImputStream = new FileInputStream(file);
 			try (XSSFWorkbook workBook = new XSSFWorkbook(fImputStream)) {
 				XSSFSheet xssfSheet = workBook.getSheetAt(0);
@@ -64,16 +63,12 @@ public class PreencheDados {
 			e.printStackTrace();
 		}	
 	}
-	
 	@SuppressWarnings("unused")
 	private List<?> toList(Iterator<?> iterator) {
 		
 		return IteratorUtils.toList(iterator);
 	}
-
 	public List<CasosApontados> getCasosApontados(){
-		
 		return casosApontados;
 	}
-
 }

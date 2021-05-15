@@ -1,11 +1,8 @@
 package dados;
 
-
-
 public class Cidade {
 	private String nomeCidade;
 	private String uF;
-
 	
 	public Cidade(String nomeCidade) {
 		this.nomeCidade =nomeCidade;
@@ -29,9 +26,5 @@ public class Cidade {
 	public void setuF(String uF) {
 		this.uF=uF;
 	}
-	
-
-	
-	
 	
 }

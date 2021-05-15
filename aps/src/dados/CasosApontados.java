@@ -5,11 +5,9 @@ public class CasosApontados {
 	private Cidade cidade;
 	private Integer qtdCasos;
 
-	
 	public CasosApontados() {
 		this(null, 0);
 	}
-	
 	public CasosApontados(Cidade cidade, int qtdeCasos) {
 		this.cidade = cidade;
 		this.qtdCasos=qtdeCasos;
@@ -23,9 +21,7 @@ public class CasosApontados {
 		this.cidade =cidade;
 
 	}
-	
-	
-	
+
 	public Cidade getCidade() {
 		return cidade;
 	}

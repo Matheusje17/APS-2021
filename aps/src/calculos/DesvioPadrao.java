@@ -2,8 +2,6 @@ package calculos;
 
 import java.text.DecimalFormat;
 
-
-
 public class DesvioPadrao {
 	
 	private double desvioPadrao;
