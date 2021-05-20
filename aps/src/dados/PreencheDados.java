@@ -1,5 +1,4 @@
 package dados;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +14,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class PreencheDados {
 	List<CasosApontados> casosApontados= new ArrayList<CasosApontados>();
-
 	public PreencheDados() throws IOException {
 		PegaDadosExcel();
 	}
@@ -52,7 +50,6 @@ public class PreencheDados {
 							break;
 						}						
 					}
-					
 					casos.setCidade(cidade);
 					casosApontados.add(casos);
 				}
