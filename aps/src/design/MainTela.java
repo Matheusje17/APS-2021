@@ -26,6 +26,8 @@ public class MainTela extends Application {
 		
 	}
 	
+
+	
 	public void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();

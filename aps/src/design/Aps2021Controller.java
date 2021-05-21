@@ -63,6 +63,12 @@ public class Aps2021Controller {
 		moda.setText(ind.getCalcModa());
 		desvioPadrao.setText(ind.getCalcDesvio());
 		variancia.setText(ind.getCalcVariancia());
+		
+		System.out.println(ind.getMedia());
+		System.out.println(ind.getCalcMediana());
+		System.out.println(ind.getCalcModa());
+		System.out.println(ind.getCalcDesvio());
+		System.out.println(ind.getCalcVariancia());
 	}
 	
 	@FXML
