@@ -1,10 +1,23 @@
 package dados;
 
 public class CasosApontados {
-	
+	private int cd_caso_apontado;
 	private Cidade cidade;
 	private Integer qtdCasos;
 
+	
+	public int getCd_caso_apontado() {
+		return cd_caso_apontado;
+	}
+	public void setCd_caso_apontado(int cd_caso_apontado) {
+		this.cd_caso_apontado = cd_caso_apontado;
+	}
+	public Integer getQtdCasos() {
+		return qtdCasos;
+	}
+	public void setQtdCasos(Integer qtdCasos) {
+		this.qtdCasos = qtdCasos;
+	}
 	public CasosApontados() {
 		this(null, 0);
 	}
