@@ -2,7 +2,7 @@ package design;
 
 import java.io.IOException;
 
-import dados.ConexaoBanco;
+//import dados.ConexaoBanco;
 import dados.PreencheDados;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -47,7 +47,7 @@ public class MainTela extends Application {
 	
 	public void showPersonOverview() {
 		try {
-			ConexaoBanco con = new ConexaoBanco();
+			//ConexaoBanco con = new ConexaoBanco();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainTela.class.getResource("/design/Aps2021.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
